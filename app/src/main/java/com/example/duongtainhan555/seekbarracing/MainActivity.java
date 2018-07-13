@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         sbTwo = findViewById(R.id.seekbarTwo);
         sbThree = findViewById(R.id.seekbarThree);
         imgPlay = findViewById(R.id.imgPlay);
+        //
+        imgPlay.setEnabled(false);
     }
     private void eventClick() {
         imgPlay.setOnClickListener(new View.OnClickListener() {
@@ -56,18 +58,17 @@ public class MainActivity extends AppCompatActivity {
                         sbThree.setProgress(sbThree.getProgress() + randomThree);
 
                         if (sbOne.getProgress() >= 100) {
-                            Toast.makeText(MainActivity.this, "Tiger Win", Toast.LENGTH_SHORT);
+                            Toast.makeText(MainActivity.this, "Tiger Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
-                            imgPlay.setEnabled(true);
+                            Restart();
                         } else if (sbTwo.getProgress() >= 100) {
-                            Toast.makeText(MainActivity.this, "Buffalo Win", Toast.LENGTH_SHORT);
+                            Toast.makeText(MainActivity.this, "Buffalo Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
-                            imgPlay.setEnabled(true);
+                            Restart();
                         } else if (sbThree.getProgress() >= 100) {
-                            Toast.makeText(MainActivity.this, "Cat Win", Toast.LENGTH_SHORT);
+                            Toast.makeText(MainActivity.this, "Cat Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
-                            imgPlay.setEnabled(true);
-
+                            Restart();
                         }
                     }
 
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     ckOne.setChecked(true);
                     ckTwo.setChecked(false);
                     ckThree.setChecked(false);
+                    imgPlay.setEnabled(true);
                 }
             }
         });
@@ -99,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     ckTwo.setChecked(true);
                     ckOne.setChecked(false);
                     ckThree.setChecked(false);
+                    imgPlay.setEnabled(true);
                 }
             }
         });
@@ -110,10 +113,22 @@ public class MainActivity extends AppCompatActivity {
                     ckThree.setChecked(true);
                     ckTwo.setChecked(false);
                     ckOne.setChecked(false);
+                    imgPlay.setEnabled(true);
                 }
             }
         });
     }
-
+    private void Restart()
+    {
+        ckOne.setChecked(false);
+        ckTwo.setChecked(false);
+        ckThree.setChecked(false);
+        //
+        sbOne.setProgress(0);
+        sbTwo.setProgress(0);
+        sbThree.setProgress(0);
+        //
+        imgPlay.setEnabled(false);
+    }
 
 }
