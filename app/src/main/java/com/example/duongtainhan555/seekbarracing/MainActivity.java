@@ -60,14 +60,17 @@ public class MainActivity extends AppCompatActivity {
                         if (sbOne.getProgress() >= 100) {
                             Toast.makeText(MainActivity.this, "Tiger Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
+                            CheckWin();
                             Restart();
                         } else if (sbTwo.getProgress() >= 100) {
                             Toast.makeText(MainActivity.this, "Buffalo Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
+                            CheckWin();
                             Restart();
                         } else if (sbThree.getProgress() >= 100) {
                             Toast.makeText(MainActivity.this, "Cat Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
+                            CheckWin();
                             Restart();
                         }
                     }
@@ -129,6 +132,38 @@ public class MainActivity extends AppCompatActivity {
         sbThree.setProgress(0);
         //
         imgPlay.setEnabled(false);
+    }
+    private void CheckWin()
+    {
+        if (sbOne.getProgress() >= 100) {
+            if(ckOne.isChecked())
+            {
+                Toast.makeText(MainActivity.this, "You Win", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(MainActivity.this, "You Lose", Toast.LENGTH_SHORT).show();
+            }
+        } else if (sbTwo.getProgress() >= 100) {
+            if(ckTwo.isChecked())
+            {
+                Toast.makeText(MainActivity.this, "You Win", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(MainActivity.this, "You Lose", Toast.LENGTH_SHORT).show();
+            }
+
+        } else if (sbThree.getProgress() >= 100) {
+            if(ckThree.isChecked())
+            {
+                Toast.makeText(MainActivity.this, "You Win", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(MainActivity.this, "You Lose", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }
