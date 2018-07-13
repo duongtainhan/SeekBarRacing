@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 CountDownTimer countDownTimer = new CountDownTimer(60000, 500) {
                     @Override
                     public void onTick(long l) {
+                        LockSeekBarAndCheckBox();
                         random = new Random();
                         int randomOne = random.nextInt(10) + 1;
                         int randomTwo = random.nextInt(10) + 1;
@@ -123,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void Restart()
     {
+        ckOne.setEnabled(true);
+        ckTwo.setEnabled(true);
+        ckThree.setEnabled(true);
         ckOne.setChecked(false);
         ckTwo.setChecked(false);
         ckThree.setChecked(false);
@@ -164,6 +168,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "You Lose", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+    private void LockSeekBarAndCheckBox()
+    {
+        sbOne.setEnabled(false);
+        sbTwo.setEnabled(false);
+        sbThree.setEnabled(false);
+        //
+        ckOne.setEnabled(false);
+        ckTwo.setEnabled(false);
+        ckThree.setEnabled(false);
     }
 
 }
