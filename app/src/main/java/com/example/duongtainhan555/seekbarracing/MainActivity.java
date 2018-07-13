@@ -62,16 +62,37 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Tiger Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
                             CheckWin();
+                            try{
+                                Thread.sleep(1000);
+                            }
+                            catch(InterruptedException e)
+                            {
+                                e.printStackTrace();
+                            }
                             Restart();
                         } else if (sbTwo.getProgress() >= 100) {
                             Toast.makeText(MainActivity.this, "Buffalo Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
                             CheckWin();
+                            try{
+                                Thread.sleep(1000);
+                            }
+                            catch(InterruptedException e)
+                            {
+                                e.printStackTrace();
+                            }
                             Restart();
                         } else if (sbThree.getProgress() >= 100) {
                             Toast.makeText(MainActivity.this, "Cat Win", Toast.LENGTH_SHORT).show();
                             this.cancel();
                             CheckWin();
+                            try{
+                                Thread.sleep(1000);
+                            }
+                            catch(InterruptedException e)
+                            {
+                                e.printStackTrace();
+                            }
                             Restart();
                         }
                     }
