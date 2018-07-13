@@ -24,6 +24,7 @@
             android:src="@drawable/ic_play"
             android:layout_width="100dp"
             android:layout_height="100dp" />
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_below="@id/imgPlay"
@@ -82,6 +83,7 @@
                     android:id="@+id/seekbarThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
             </LinearLayout>
         </LinearLayout>
 
